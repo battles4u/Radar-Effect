@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1e1e1e;
+}
+.radar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ff000d, #00ff000d);
+  box-shadow: 0 0 50px #00ff0080;
+  overflow: hidden;
+}
+.inner-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+  border: 2px solid #00ff0033;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff004d;
+  position: relative;
+}
+
+.sweeper {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00ff0000 300deg,
+    #27da2780 345deg,
+    #00ff0080 360deg
+  );
+  animation: sweeper 2s linear infinite;
+}
+
+.dot {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #00ff0080;
+  animation: flash 2s ease-in-out infinite;
+}
+
+.dot1 {
+  top: 30px;
+  left: 150px;
+}
+
+.dot2 {
+  top: 200px;
+  left: 100px;
+  animation-delay: 1s;
+}
+
+@keyframes sweeper {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flash {
+  0%,
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
